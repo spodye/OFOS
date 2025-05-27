@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('price');
             $table->string('category');
             $table->integer('times_sold');
+            $table->string('imagepath');
             $table->timestamps();
         });
     }

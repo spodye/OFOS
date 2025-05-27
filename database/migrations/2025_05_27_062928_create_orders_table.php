@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('address');
             $table->ProductId()->references('id')->on('products');
             $table->UserId()->references('id')->on('users');
-            $table->;
             $table->timestamps();
         });
     }

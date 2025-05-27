@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Menu;
 use App\Livewire\About;
 use App\Livewire\Dashboard;
+use \App\Livewire\Admin\ProductForm;
 
 Route::view('/', 'welcome');
 Route::get('/select', Menu::class)->name('select');
@@ -18,3 +19,8 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 require __DIR__.'/auth.php';
+
+
+// Route::get('admin/products-create',ProductForm::class)->name('admin.products.create');
+// Route::get('/admin',ProductForm::class)->name('admin.products.create');
+
