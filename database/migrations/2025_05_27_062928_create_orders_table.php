@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('address');
-            $table->ProductId()->references('id')->on('products');
-            $table->UserId()->references('id')->on('users');
+            $table->integer('ProductId')->references('id')->on('products');
+            $table->integer('UserId')->references('id')->on('users');
             $table->timestamps();
         });
     }
