@@ -1,5 +1,6 @@
 <?php
-namespace App\Http\Livewire\Admin;
+
+namespace App\Livewire\Admin;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -10,36 +11,74 @@ class ProductForm extends Component
 {
     use WithFileUploads;
 
-    public $name, $description, $price, $category, $image;
+    public $productId;
+    public $name, $description, $price, $category, $image, $existingImage;
 
     protected $rules = [
         'name' => 'required|string|max:255',
         'description' => 'required|string|max:1000',
         'price' => 'required|numeric|min:1',
         'category' => 'required|string|max:100',
-        'image' => 'required|image|max:2048'
+        'image' => 'nullable|image|max:2048',
     ];
+
+    public function mount($id = null)
+    {
+        if ($id) {
+            $product = Product::findOrFail($id);
+            $this->productId = $product->id;
+            $this->name = $product->name;
+            $this->description = $product->description;
+            $this->price = $product->price;
+            $this->category = $product->category;
+            $this->existingImage = $product->image;
+        }
+    }
 
     public function submit()
     {
         $this->validate();
 
-        $filename = Str::uuid() . '.' . $this->image->getClientOriginalExtension();
-        $path = $this->image->storeAs('products', $filename, 'public');
+        if ($this->productId) {
+            // Editing existing product
+            $product = Product::findOrFail($this->productId);
 
-        Product::create([
-            'name' => $this->name,
-            'description' => $this->description,
-            'price' => $this->price,
-            'category' => $this->category,
-            'image' => 'products/' . $filename,
-            'times_sold' => 0
-        ]);
+            if ($this->image) {
+                $filename = Str::uuid() . '.' . $this->image->getClientOriginalExtension();
+                $this->image->storeAs('products', $filename, 'public');
+                $product->image = 'products/' . $filename;
+            }
 
-        session()->flash('message', 'Product added successfully.');
+            $product->update([
+                'name' => $this->name,
+                'description' => $this->description,
+                'price' => $this->price,
+                'category' => $this->category,
+            ]);
 
-        // Clear the form
-        $this->reset(['name', 'description', 'price', 'category', 'image']);
+            session()->flash('message', 'Product updated successfully.');
+        } else {
+            // Creating new product
+            $filename = null;
+
+            if ($this->image) {
+                $filename = Str::uuid() . '.' . $this->image->getClientOriginalExtension();
+                $this->image->storeAs('products', $filename, 'public');
+            }
+
+            Product::create([
+                'name' => $this->name,
+                'description' => $this->description,
+                'price' => $this->price,
+                'category' => $this->category,
+                'image' => $filename ? 'products/' . $filename : null,
+                'times_sold' => 0,
+            ]);
+
+            session()->flash('message', 'Product added successfully.');
+        }
+
+        return redirect()->route('admin.dashboard');
     }
 
     public function render()

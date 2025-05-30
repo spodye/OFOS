@@ -1,6 +1,5 @@
-<div>
 <div class="max-w-xl mx-auto p-6 bg-white rounded shadow">
-    <h2 class="text-xl font-bold mb-4">Add New Product</h2>
+    <h2 class="text-xl font-bold mb-4">{{ $productId ? 'Edit Product' : 'Add New Product' }}</h2>
 
     @if (session()->has('message'))
         <div class="bg-green-100 text-green-800 p-2 rounded mb-4">
@@ -41,12 +40,12 @@
 
         @if ($image)
             <img src="{{ $image->temporaryUrl() }}" class="mt-4 w-32 h-32 object-cover rounded" />
+        @elseif ($existingImage)
+            <img src="{{ asset('storage/' . $existingImage) }}" class="mt-4 w-32 h-32 object-cover rounded" />
         @endif
 
         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-            Add Product
+            {{ $productId ? 'Update Product' : 'Add Product' }}
         </button>
     </form>
-</div>
-
 </div>
