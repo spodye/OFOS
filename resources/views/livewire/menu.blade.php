@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-5">
         @foreach ($dishes as $dish)
             <div class="bg-white border border-gray-200 rounded-lg shadow-sm flex flex-col overflow-hidden">
-                <img src="" alt="Image of {{ $dish['name'] }}" class="w-full h-44 object-cover">
+                <img src="{{ asset('storage/' . $dish->image) }}" alt="Image of {{ $dish['name'] }}" class="w-full h-44 object-cover">
                 
                 <div class="p-4 flex flex-col justify-between flex-1">
                     <div>

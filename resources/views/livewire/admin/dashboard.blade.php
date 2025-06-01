@@ -29,8 +29,8 @@
                     <td class="border border-gray-400 px-2 py-1">{{ $product->category }}</td>
                     <td class="border border-gray-400 px-2 py-1">{{ $product->times_sold }}</td>
                     <td class="border border-gray-400 px-2 py-1">
-                        <a href="" class="text-blue-500">Edit</a>
-                        {{-- <a href="{{ route('admin.products.edit', $product->id) }}" class="text-blue-500">Edit</a> --}}
+                        <a href="{{route('admin.products.edit', ['id' => $product]) }}" class="text-blue-500">Edit</a>
+                        {{-- <a href="{{route('admin.products.edit', ['id' => $product]) }}" class="text-blue-500">Edit</a> --}}
                         <button  class="text-red-500 ml-2">Delete</button>
                         {{-- <button wire:click="deleteProduct({{ $product->id }})" class="text-red-500 ml-2">Delete</button> --}}
                     </td>

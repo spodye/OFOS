@@ -85,4 +85,10 @@ class ProductForm extends Component
     {
         return view('livewire.admin.product-form');
     }
+
+    public function edit(Product $id)
+    {
+        
+
+    }
 }

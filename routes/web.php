@@ -26,7 +26,7 @@ require __DIR__.'/auth.php';
 Route::middleware(['role:admin'])->group(function () {
     Route::get('/admin/dashboard',AdminDashboard::class)->name('admin.dashboard');
     Route::get('/admin/products/create', PF::class)->name('admin.products.create');
-    Route::get('/admin/products/edit/{id}', PF::class)->name('admin.products.edit');  
+    Route::get('/admin/products/edit/{id}', PF::class, 'edit')->name('admin.products.edit');  
 });
 
 
