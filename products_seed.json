@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "name": "Grilled Chicken",
+        "description": "Juicy grilled chicken with herbs and lemon.",
+        "price": "850.00",
+        "category": "Main Course",
+        "times_sold": 8,
+        "image": "products\/e1ef0a18-d3e0-47a2-b61d-0cb22f90c3c1.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 12:57:04"
+    },
+    {
+        "id": 2,
+        "name": "Chocolate Lava Cake",
+        "description": "Molten chocolate cake with vanilla ice cream.",
+        "price": "450.00",
+        "category": "Dessert",
+        "times_sold": 90,
+        "image": "products\/24406a34-56d3-494b-9ca8-e03e9c9dd752.png",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 10:17:59"
+    },
+    {
+        "id": 3,
+        "name": "Veggie Pizza",
+        "description": "Loaded with fresh vegetables and mozzarella.",
+        "price": "600.00",
+        "category": "Main Course",
+        "times_sold": 20,
+        "image": "products\/7a7f7474-c336-4f1f-a6fe-c33c95f875a0.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 12:59:37"
+    },
+    {
+        "id": 4,
+        "name": "Chicken Momo",
+        "description": "Steamed dumplings filled with chicken and spices.",
+        "price": "250.00",
+        "category": "Snack",
+        "times_sold": 71,
+        "image": "products\/f528fcf1-792e-4408-add8-6461c9a9f3ea.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 13:01:33"
+    },
+    {
+        "id": 5,
+        "name": "Buff Chowmein",
+        "description": "Spicy noodles with buffalo meat.",
+        "price": "200.00",
+        "category": "Snack",
+        "times_sold": 88,
+        "image": "products\/b12997f5-98e8-4d98-88a2-163fe4061c44.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 10:17:37"
+    },
+    {
+        "id": 6,
+        "name": "Paneer Butter Masala",
+        "description": "Creamy paneer curry with Indian spices.",
+        "price": "500.00",
+        "category": "Main Course",
+        "times_sold": 21,
+        "image": "products\/06da09cb-ddff-4a3b-8e2c-99ec260fceb6.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 13:05:15"
+    },
+    {
+        "id": 7,
+        "name": "Thukpa",
+        "description": "Himalayan noodle soup with vegetables.",
+        "price": "220.00",
+        "category": "Soup",
+        "times_sold": 35,
+        "image": "products\/7c626c12-ea2e-4131-a61f-076ae21b8b6b.webp",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 13:05:44"
+    },
+    {
+        "id": 8,
+        "name": "Fish Curry",
+        "description": "Spicy river fish in traditional Nepali curry.",
+        "price": "700.00",
+        "category": "Main Course",
+        "times_sold": 78,
+        "image": "products\/ce6333f1-282e-4236-b8eb-b13adf462269.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 11:17:06"
+    },
+    {
+        "id": 9,
+        "name": "Chicken Biryani",
+        "description": "Fragrant rice with spiced chicken.",
+        "price": "750.00",
+        "category": "Main Course",
+        "times_sold": 40,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 10,
+        "name": "Sel Roti",
+        "description": "Traditional Nepali rice doughnut.",
+        "price": "150.00",
+        "category": "Snack",
+        "times_sold": 16,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 11,
+        "name": "Lassi",
+        "description": "Sweet yogurt drink with cardamom.",
+        "price": "120.00",
+        "category": "Beverage",
+        "times_sold": 13,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 12,
+        "name": "Samosa",
+        "description": "Crispy triangle stuffed with spicy potatoes.",
+        "price": "60.00",
+        "category": "Snack",
+        "times_sold": 17,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 13,
+        "name": "Tandoori Chicken",
+        "description": "Spicy roasted chicken cooked in tandoor.",
+        "price": "800.00",
+        "category": "Main Course",
+        "times_sold": 39,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 14,
+        "name": "Dal Bhat",
+        "description": "Lentils and rice with pickles and vegetables.",
+        "price": "300.00",
+        "category": "Main Course",
+        "times_sold": 46,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 15,
+        "name": "Mocha Frappe",
+        "description": "Iced coffee with chocolate and cream.",
+        "price": "350.00",
+        "category": "Beverage",
+        "times_sold": 99,
+        "image": "products\/43e1cfbc-2be8-4daa-a0dd-067842c8dfd4.webp",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 10:12:38"
+    },
+    {
+        "id": 16,
+        "name": "Fruit Salad",
+        "description": "Mixed seasonal fruits with mint.",
+        "price": "250.00",
+        "category": "Dessert",
+        "times_sold": 81,
+        "image": "products\/abce5228-0a36-4f68-9df8-caa13193ab90.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 11:15:33"
+    },
+    {
+        "id": 17,
+        "name": "Egg Roll",
+        "description": "Stuffed paratha roll with egg and spices.",
+        "price": "180.00",
+        "category": "Snack",
+        "times_sold": 0,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 18,
+        "name": "Chili Paneer",
+        "description": "Spicy paneer stir-fry with bell peppers.",
+        "price": "400.00",
+        "category": "Snack",
+        "times_sold": 74,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    },
+    {
+        "id": 19,
+        "name": "Hot Chocolate",
+        "description": "Creamy rich hot cocoa.",
+        "price": "200.00",
+        "category": "Beverage",
+        "times_sold": 94,
+        "image": "products\/b1e3859b-eb2a-4c31-8165-92d169a0f82b.jpg",
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 10:20:06"
+    },
+    {
+        "id": 20,
+        "name": "Chicken Sandwich",
+        "description": "Grilled chicken sandwich with lettuce and mayo.",
+        "price": "300.00",
+        "category": "Snack",
+        "times_sold": 50,
+        "image": null,
+        "created_at": "2025-06-06 09:30:50",
+        "updated_at": "2025-06-06 09:30:50"
+    }
+]
