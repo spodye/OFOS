@@ -8,9 +8,10 @@ use App\Models\OrderItem;
 class Order extends Model
 {
     protected $fillable = [
-        'Amount',
-        'Address',
-        'Phone'
+        'userId',
+        'amount',
+        'address',
+        'phone'
     ];
     public function items(){
         return $this->hasMany(Orderitem::class);

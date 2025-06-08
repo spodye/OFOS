@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('address');
+            $table->string('address')->default('ND');
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('id')->on('users');
             $table->string('status')->default('pending');
             $table->string('phone')->default(0);
+            $table->string('amount')->default(0);
             $table->timestamps();
         });
     }
