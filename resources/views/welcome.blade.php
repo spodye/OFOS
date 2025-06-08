@@ -19,8 +19,8 @@
                         <button type="submit" class="hover:text-red-100">Logout</button>
                     </form>
                 @else
-                    {{-- <a href="{{ route('login') }}" class="mr-4 hover:text-red-100">Login</a> --}}
-                    {{-- <a href="{{ route('register') }}" class="hover:text-red-100">Register</a> --}}
+                     <a href="{{ route('login') }}" class="mr-4 hover:text-red-100">Login</a>
+                     <a href="{{ route('register') }}" class="hover:text-red-100">Register</a> 
                 @endif
             </div>
         </div>

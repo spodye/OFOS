@@ -1,8 +1,9 @@
 <div class="p-8 bg-gray-100 min-h-screen font-sans">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mx-5">
+        <div class="flex mx-5 gap-6">
+            <div class="flex-1 p-4 flex gap-4">
         <!-- Product Grid: 4 columns if cart is empty, 3 columns if cart has items -->
-        <div class="col-span-1 lg:col-span-{{ empty($this->items) ? 4 : 3 }}">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-{{ empty($this->items) ? 4 : 3 }} gap-6">
+        <div class="flex-1">
+            <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-{{ empty($this->items) ? 4 : 3 }} gap-6">
                 @foreach ($dishes as $dish)
                     <div class="bg-white border border-gray-200 rounded-lg shadow-sm flex flex-col overflow-hidden">
                         <img src="{{ asset('storage/' . $dish->image) }}" alt="Image of {{ $dish->name }}" class="w-full h-44 object-cover">
@@ -31,7 +32,7 @@
 
         <!-- Cart Component: Only shown if cart is not empty -->
         @if (!empty($this->items))
-            <div class="col-span-1 lg:col-span-1">
+            <div class="w-80">
                 <livewire:cart/>
             </div>
         @endif

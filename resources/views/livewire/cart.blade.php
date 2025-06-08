@@ -1,4 +1,4 @@
-<div class="p-6">
+<div class="fixed top-10 right-0 h-full w-80fixed top-0 right-0 h-full w-80 p-6">
     <h2 class="text-2xl font-bold mb-4">Your Cart</h2>
 
     @if(empty($items))
