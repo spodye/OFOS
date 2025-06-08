@@ -32,4 +32,9 @@
             <p class="text-lg font-semibold">Total: ₹{{ $cart->amount }}</p>
         </div>
     @endif
+    <a href="{{ route('checkout') }}"
+   class="mt-4 inline-block px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700 transition">
+   Proceed to Checkout
+</a>
+
 </div>
