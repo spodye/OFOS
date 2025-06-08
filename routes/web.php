@@ -6,6 +6,7 @@ use App\Livewire\About;
 use App\Livewire\Dashboard;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Livewire\Admin\ProductForm as PF;
+use App\Livewire\Checkout;
 
 
 
@@ -27,6 +28,11 @@ Route::middleware(['role:admin'])->group(function () {
     Route::get('/admin/dashboard',AdminDashboard::class)->name('admin.dashboard');
     Route::get('/admin/products/create', PF::class)->name('admin.products.create');
     Route::get('/admin/products/edit/{id}', PF::class, 'edit')->name('admin.products.edit');  
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/checkout', Checkout::class)->name('checkout');
 });
 
 
