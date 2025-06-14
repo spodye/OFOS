@@ -38,36 +38,38 @@ class Checkout extends Component
             return;
         }
         // dd($this->address);
-
         DB::transaction(function () {
-            $order=Order::create([
-                'address'=> $this->address,
-                'userId'=>auth()->id(),
-                'phone'=> $this->phone,
-                'amount'=> 0
+            // Calculate total amount first
+            $amount = $this->items->sum('price');
+        
+            // Create the order with correct amount
+            $order = Order::create([
+                'address' => $this->address,
+                'userId' => auth()->id(),
+                'phone' => $this->phone,
+                'amount' => $amount,
             ]);
-            // dd($order);
-        foreach ($this->items as $item) {
-            // Create the order item
-            Orderitem::create([
-                'productId' => $item->productId,
-                'productname' => $item->productname,
-                'orderId' => $order->id,
-                'price' => $item->price,
-            ]);
-
-            // Find the product and increment times_sold
-            $product = Product::find($item->productId);
-            if ($product) {
-                $product->increment('times_sold');
+        
+            // Create order items and update products
+            foreach ($this->items as $item) {
+                Orderitem::create([
+                    'productId' => $item->productId,
+                    'productname' => $item->productname,
+                    'orderId' => $order->id,
+                    'price' => $item->price,
+                ]);
+            
+                $product = Product::find($item->productId);
+                if ($product) {
+                    $product->increment('times_sold');
+                }
+            
+                $item->delete();
             }
-
-            // Delete the item
-            $item->delete();
-        }
-
+        
             $this->cart->update(['amount' => 0]);
         });
+        
 
         session()->flash('success', 'Order placed successfully!');
         return redirect()->to('/dashboard'); // redirect to homepage or thank you page
