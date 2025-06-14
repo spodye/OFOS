@@ -4,6 +4,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Orderitem;
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 
 class Checkout extends Component
@@ -46,16 +47,24 @@ class Checkout extends Component
                 'amount'=> 0
             ]);
             // dd($order);
-            foreach ($this->items as $item) {
-                Orderitem::create([
-                    'productId' => $item->productId,
-                    'productname'=>$item->productname,
-                    'orderId'=>$order->id,
-                    'price'=> $item->price,
-                ]);
+        foreach ($this->items as $item) {
+            // Create the order item
+            Orderitem::create([
+                'productId' => $item->productId,
+                'productname' => $item->productname,
+                'orderId' => $order->id,
+                'price' => $item->price,
+            ]);
 
-                $item->delete();
+            // Find the product and increment times_sold
+            $product = Product::find($item->productId);
+            if ($product) {
+                $product->increment('times_sold');
             }
+
+            // Delete the item
+            $item->delete();
+        }
 
             $this->cart->update(['amount' => 0]);
         });
