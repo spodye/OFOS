@@ -10,12 +10,19 @@ use App\Models\Cartitem;
 
 class Dashboard extends Component
 {
+  public function mount()
+    {
+        if (auth()->user()->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+    }
+
     public function render()
     {
         return view('livewire.dashboard',['topProducts'=>Product::orderByDesc('times_sold')->take(6)->get()]);
     }
-public function addToOrder($productId)
-{
+    public function addToOrder($productId)
+    {
     $product = Product::findOrFail($productId);
     $user = auth()->user();
 
