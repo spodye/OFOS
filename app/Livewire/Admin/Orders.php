@@ -26,14 +26,14 @@ class Orders extends Component
 
         public function mount()
     {
-        $this->latestOrderId = \App\Models\Order::latest()->value('id');
+        $this->latestOrderId = Order::latest()->value('id');
     }
     public function checkForNewOrders()
     {
-        $newLatestOrderId = \App\Models\Order::latest()->value('id');
+        $newLatestOrderId = Order::latest()->value('id');
         if ($newLatestOrderId && $newLatestOrderId != $this->latestOrderId) {
             $this->latestOrderId = $newLatestOrderId;
-            $this->loadOrders();  // Call your existing loadOrders method to refresh data
+            $this->loadOrders();  //  refresh data
         }
     }
     public function loadOrders(){
@@ -43,7 +43,6 @@ class Orders extends Component
 
     public function render()
     {
-        // $orders = Order::all();
         $this->orders = Order::orderBy('created_at', 'desc')->get();
         return view('livewire.admin.orders',['orders'=>$this->orders]);
     }

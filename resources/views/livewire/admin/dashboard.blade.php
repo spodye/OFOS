@@ -3,8 +3,7 @@
     <h1 class="text-2xl font-bold mb-4">Admin Dashboard - Products</h1>
 
     <a href="{{ route('admin.products.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Add Product</a>
-    {{-- <a href="" class="bg-blue-500 text-white px-4 py-2 rounded">Add Product</a> --}}
-
+    <a href="{{ route('admin.orders') }}" class="bg-blue-500 text-white px-4 py-2 rounded">View Orders</a>
     @if (session()->has('message'))
         <div class="text-green-600 mt-2">{{ session('message') }}</div>
     @endif
