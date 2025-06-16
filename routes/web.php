@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Menu;
 use App\Livewire\About;
+use App\Livewire\MyOrders;
 use App\Livewire\Dashboard;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Livewire\Admin\Orders as AdminOrders;
@@ -35,6 +36,7 @@ Route::middleware(['role:admin'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/checkout', Checkout::class)->name('checkout');
+    Route::get('/my-orders', MyOrders::class)->name('my.orders');
 });
 
 
