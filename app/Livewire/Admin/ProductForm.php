@@ -54,6 +54,7 @@ class ProductForm extends Component
                 'description' => $this->description,
                 'price' => $this->price,
                 'category' => $this->category,
+                // 'image'=> $this->image,
             ]);
 
             session()->flash('message', 'Product updated successfully.');
